@@ -45,7 +45,7 @@ $(function() {
         e.preventDefault();
         //通过提出data来进行代码优化
         var data = { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val() }
-        $.post('http://api-breakingnews-web.itheima.net/api/reguser', data, function(res) {
+        $.post('/api/reguser', data, function(res) {
             if (res.status !== 0) {
                 // return console.log(res.message);
                 return layer.msg(res.message)
@@ -62,7 +62,7 @@ $(function() {
     $('#form_login').on('submit', function(e) {
         e.preventDefault();
         $.ajax({
-            url: 'http://api-breakingnews-web.itheima.net/api/login',
+            url: '/api/login',
             method: 'post',
             //快速获取表单中的数据
             data: $(this).serialize(),
@@ -76,7 +76,7 @@ $(function() {
                 localStorage.setItem('token', res.token)
                 console.log(res.token);
                 //跳转到后台主页
-                // location.href = '/index.html'
+                location.href = '/index.html'
             }
         })
     })
