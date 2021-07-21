@@ -56,6 +56,6 @@ function renderAvatar(user) {
         $('.layui-nav-img').hide()
             //获取第一个字符toUpperCase 转成字符
         var first = name[0].toUpperCase()
-        $('text-avatar').html(first).show()
+        $('.text-avatar').html(first).show()
     }
 }
